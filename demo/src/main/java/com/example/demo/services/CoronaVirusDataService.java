@@ -12,13 +12,14 @@ import java.net.URI;
 import java.net.http.HttpClient;
 
 @Service
-public class CoronaVirusService{
+public class CoronaVirusDataService{
 
     private static String DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+   
 
     @PostConstruct
     public void fetchData() throws IOException, InterruptedException {
-        java.net.http.HttpClient client = HttpClient.newHttpClient();
+        HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(DATA_URL))
             .build();

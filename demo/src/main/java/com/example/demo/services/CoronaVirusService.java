@@ -2,7 +2,13 @@ package com.example.demo.services;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
 import java.net.http.HttpRequest;
+import java.net.URI;
 import java.net.http.HttpClient;
 
 @Service
@@ -14,7 +20,7 @@ public class CoronaVirusService{
     public void fetchData() throws IOException, InterruptedException {
         java.net.http.HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(new URI(DATA_URL))
+            .uri(URI.create(DATA_URL))
             .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());

@@ -29,4 +29,15 @@ public class LocationStats {
     public void setTotal(int total) {
         this.total = total;
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " state='" + getState() + "'" +
+            ", country='" + getCountry() + "'" +
+            ", total='" + getTotal() + "'" +
+            "}";
+    }
+
 }

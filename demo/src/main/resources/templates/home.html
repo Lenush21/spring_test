@@ -5,24 +5,38 @@
 <head>
    <title>Coronavirus tracker</title>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
-
+<div class="container"></div>
+<h1>Coronavirus tracker app</h1>
 <body>
-  
-   <table>
+
+   <div class="jumbotron">
+      <h1 class="display-4" th:text="${total}"></h1>
+      <p class="lead">Total cases</p>
+      <hr class="my-4">
+      <p>
+       <span>New cases</span>
+       <span th:text="${newCases}"></span>
+      </p>
+      
+   </div>
+
+   <table class="table">
       <tr>
-      <th>State</th>
-      <th>Country</th>
+      <th style="width: 400px;">State</th>
+      <th style="width: 400px;">Country</th>
       <th>Total cases</th>
+      <th>Changes</th>
       </tr>
       <tr th:each="locationStat : ${locationStats}">
       <td th:text="${locationStat.state}"></td>
       <td th:text="${locationStat.country}"></td>
-      <td th:text="${locationStat.total}"></td>
+      <td th:text="${locationStat.total}">0</td>
+      <td th:text="${locationStat.diff}">0</td>
       </tr>
    </table>
-  
+</div>
 </body>
 
 </html>

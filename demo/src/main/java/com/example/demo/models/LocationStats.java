@@ -5,6 +5,15 @@ public class LocationStats {
     private String state;
     private String country;
     private int total;
+    private int diff; 
+
+    public int getDiff() {
+        return this.diff;
+    }
+
+    public void setDiff(int diff) {
+        this.diff = diff;
+    }
 
     public String getState() {
         return this.state;

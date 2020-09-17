@@ -44,6 +44,9 @@ public class CoronaVirusDataService{
             locationStats.setState(record.get("Province/State"));
             locationStats.setCountry(record.get("Country/Region"));
             locationStats.setTotal(Integer.parseInt(record.get(record.size() - 1)));  
+            int d1 = Integer.parseInt(record.get(record.size() - 1));
+            int d2 = Integer.parseInt(record.get(record.size() - 2));
+            locationStats.setDiff(d1 - d2);
             allStats.add(locationStats); 
             System.out.println(allStats);  
             }

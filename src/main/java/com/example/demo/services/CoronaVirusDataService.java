@@ -48,7 +48,7 @@ public class CoronaVirusDataService{
             int d2 = Integer.parseInt(record.get(record.size() - 2));
             locationStats.setDiff(d1 - d2);
             allStats.add(locationStats); 
-            System.out.println(allStats);  
+            //System.out.println(allStats);  
             }
         
         }
